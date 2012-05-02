@@ -44,13 +44,20 @@ int main( void )
         //TCNT2 should overflow every 16.384 ms (256 * 64us)
 
         /* Enable Interrupts     */
-        sei(); 
+        sei();
 
         /* Go over the font table and display it        */
         for (loc=5;loc<=475;loc=loc+5)
         {
                 display=loc;_delay_ms(50);
         }
+
+        /* Disable Interupts    */
+        cli();
+
+        /* Shutdown the displays     */
+        COLUMNS=0xFF;
+        ROWS=0;
 
         while (1) { }
 }
