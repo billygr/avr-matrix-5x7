@@ -12,7 +12,7 @@ extern unsigned char font5x7 [];
 
 volatile unsigned int display;
 
-ISR (SIG_OVERFLOW2)
+ISR (TIMER2_OVF_vect)
 {
 /*
         Timer2 overflows every 16.384mS
